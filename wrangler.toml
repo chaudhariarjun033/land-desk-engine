@@ -1,0 +1,17 @@
+name = "land-desk-engine"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[observability]
+enabled = true
+
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true
+
+# D1 is created automatically on first deploy (wrangler >= 4.45 auto-provisioning).
+[[d1_databases]]
+binding = "DB"
+database_name = "land-desk"
